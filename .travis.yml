@@ -1,0 +1,8 @@
+sudo: required
+language: c
+before_install:
+  - sudo apt-get update -qq
+  - apt-cache search mingw
+  - sudo apt-get install wine gcc-mingw-w64
+script:
+  - true
