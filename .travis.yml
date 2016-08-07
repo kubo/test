@@ -1,8 +1,7 @@
-sudo: required
+matrix:
+  include:
+    - os: linux
+    - os: osx
 language: c
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get remove mingw32 mingw32-runtime mingw32-binutils
-  - sudo apt-get install mingw-w64
 script:
-  - true
+  - /usr/bin/env
