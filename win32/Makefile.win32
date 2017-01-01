@@ -1,0 +1,7 @@
+all: hello.exe
+
+hello.exe: ../hello.c
+	cl /nologo /MD /Fehello.exe ../hello.c
+
+check: hello.exe
+	.\hello.exe
