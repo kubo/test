@@ -1,8 +1,4 @@
-matrix:
-  include:
-    - os: osx
-      osx_image: xcode10.1
-language: c
+language: ruby
+dist: bionic
 script:
-  - gcc -E -dM -x c /dev/null
-  - gcc -m32 -E -dM -x c /dev/null
+  - rvm list
