@@ -1,11 +1,7 @@
 language: ruby
 dist: bionic
 rvm:
-  - 2.5
-  - 2.6
-  - 2.7
-  - 3
-  - truffleruby-20.3.0
+  - 3.0
 script:
   - rvm list
   - ruby --version
