@@ -16,16 +16,16 @@ jobs:
           args: --no-deps
       - name: push docs
         run: |
-          git checkout -B gh-pages
+          git checkout gh-pages
           rm -rf docs
           mv target/doc docs
           echo '<html>' > docs/index.html
           echo '<head><meta http-equiv="refresh" content="5; url=./testlib"/></head>' >> docs/index.html
-          echo '<body><p>Please follow <a href="./testlib">this link</a>.</p></body>' >> docs/index.html
+          echo '<body><p>Redirect to <a href="./testlib">here</a> in 5 seconds.</p></body>' >> docs/index.html
           echo '</html>' >> docs/index.html
           git config --local user.email "docs-action@github.com"
           git config --local user.name "GitHub Action (docs)"
           git add docs
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit -m 'Add docs'
-          git push -f origin gh-pages
+          git push origin gh-pages
