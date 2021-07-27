@@ -13,12 +13,16 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: doc
-          args: --target-dir docs-tmp --no-deps
+          args: --no-deps
       - name: push docs
         run: |
           git checkout -B gh-pages
           rm -rf docs
-          mv docs-tmp docs
+          mv target/doc docs
+          echo '<html>' > docs/index.html
+          echo '<head><meta http-equiv="refresh" content="5; url=./testlib"/></head>' >> docs/index.html
+          echo '<body><p>Please follow <a href="./testlib">this link</a>.</p></body>' >> docs/index.html
+          echo '</html>' >> docs/index.html
           git config --local user.email "docs-action@github.com"
           git config --local user.name "GitHub Action (docs)"
           git add docs
