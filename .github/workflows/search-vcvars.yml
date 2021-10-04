@@ -1,0 +1,11 @@
+on: 
+  push:
+    branches: [master]
+    
+jobs:
+  gh-pages:
+    runs-on: windows-latest
+    steps:
+      - run: |
+          where /r c:\ vcvars*.bat
+        shell: cmd

@@ -1,8 +1,0 @@
-language: ruby
-dist: bionic
-rvm:
-  - ruby-3.0
-  - truffleruby-20.3.0
-script:
-  - rvm list
-  - ruby --version

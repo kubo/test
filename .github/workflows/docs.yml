@@ -1,6 +1,6 @@
 on: 
   push:
-    branches: [master]
+    branches: [docs]
     
 jobs:
   gh-pages:
